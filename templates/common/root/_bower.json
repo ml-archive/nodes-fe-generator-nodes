@@ -1,0 +1,24 @@
+{<% var ngVer = "1.4.0" %>
+"name": "<%= appname %>",
+"version": "1.0.0",
+	"dependencies": {
+		"angular": "^<%= ngVer %>"<% if (ncore) { %>,
+		"nCore": "*"<% } %><% if (greensock) { %>,
+		"gsap": "^1.16"<% } %><% if(lodash) { %>,
+		"ng-lodash": "^0.3.0"<% } %><% if (foundation) { %>,
+		"angular-foundation": "*",
+		"foundation": "*"<% } %><% if (ngstorage) { %>,
+		"ngstorage": "~0.3.0"<% } %><% if (ngSanitize) { %>,
+		"angular-sanitize": "^<%= ngVer %>"<% } %><% if (ngAnimate) { %>,
+		"angular-animate": "^<%= ngVer %>"<% } %><% if (ngTouch) { %>,
+		"angular-touch": "^<%= ngVer %>"<% } %>,
+		"angular-ui-router": "^0.2.10",
+		"angular-loading-bar": "^0.8.0",
+		"angular-busy": "^4.1.0",
+		"angulartics": "^0.20.0"
+	},
+	"appPath": "<%= appPath %>",
+	"resolutions": {
+		"angular": "^<%= ngVer %>"
+	}
+}

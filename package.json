@@ -1,0 +1,48 @@
+{
+  "name": "generator-nodes",
+  "version": "1.0.0-rc.1",
+  "description": "Generator for AngularJS apps, with an oppinionated and tailored workflow",
+  "keywords": [
+    "yeoman-generator",
+    "scaffold",
+    "framework",
+    "component",
+    "front-end",
+    "app",
+    "angular",
+    "styleguide",
+    "nodes"
+  ],
+  "author": "Dennis Haulund Nielsen",
+  "repository": "nodes-frontend/generator-nodes",
+  "bugs": {
+    "url": "https://github.com/nodes-frontend/generator-nodes/issues"
+  },
+  "license": {
+    "type": "MIT",
+    "url": "https://github.com/nodes-frontend/generator-nodes/blob/master/LICENSE"
+  },
+  "url": "https://github.com/nodes-frontend/generator-nodes",
+  "homepage": "https://github.com/nodes-frontend/generator-nodes",
+  "dependencies": {
+    "chalk": "^1.0.0",
+    "class-extend": "^0.1.1",
+    "html-wiring": "^1.1.0",
+    "mkdirp": "^0.5.1",
+    "underscore": "^1.8.3",
+    "underscore.string": "^3.1.1",
+    "wiredep": "^2.2.2",
+    "yeoman-generator": "^0.20.1"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-jshint": "~0.8.0",
+    "grunt-conventional-changelog": "~1.1.0",
+    "grunt-release": "~0.6.0",
+    "load-grunt-tasks": "~0.3.0"
+  },
+  "engines": {
+    "node": ">=0.10.0",
+    "npm": ">=1.2.10"
+  }
+}
