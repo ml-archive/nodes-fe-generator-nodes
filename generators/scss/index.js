@@ -36,7 +36,7 @@ module.exports = nodesGenerator.extend({
 
 		promptForScssType: function() {
 
-			if(this.options.scssType) {
+			if (this.options.scssType) {
 				this.scssType = this.options.scssType;
 				return;
 			}

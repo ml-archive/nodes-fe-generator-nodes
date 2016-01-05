@@ -2,7 +2,7 @@
 	'use strict';
 
 	angular.module('<%= moduleName %>')
-		.constant('<%= name %>', {
+		.value('<%= name %>', {
 			meaningOfLife: 42
 		});
 })();

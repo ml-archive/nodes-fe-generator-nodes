@@ -53,7 +53,7 @@ module.exports = nodesGenerator.extend({
 		});
 
 		this.option('hasTemplate', {
-			desc: 'Allows other generators to allow the template-url parameter',
+			desc: 'Allows other generators to provide the template-url parameter',
 			type: Boolean
 		});
 

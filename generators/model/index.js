@@ -98,12 +98,6 @@ module.exports = nodesGenerator.extend({
 
 		}
 
-	},
-
-	end: function() {
-
-		//this.scriptToIndex(this.destinationFullPath);
-
 	}
 
 });

@@ -38,7 +38,7 @@ module.exports = nodesGenerator.extend({
 			var prompt = {
 				type: 'input',
 				name: 'location',
-				message: chalk.green('Which folder should i create the constant in?'),
+				message: chalk.green('Which folder should i create the html file in?'),
 				default: this.name
 			};
 
