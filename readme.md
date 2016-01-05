@@ -1,5 +1,9 @@
 # generator nodes
 
+[![Build Status](https://travis-ci.org/nodes-frontend/generator-nodes.svg?branch=master)](https://travis-ci.org/nodes-frontend/generator-nodes)
+[![Coverage Status](https://coveralls.io/repos/nodes-frontend/generator-nodes/badge.svg?branch=master&service=github)](https://coveralls.io/github/nodes-frontend/generator-nodes?branch=master)
+[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
+
 Opinionated workflow and toolkit used for Angular front-end development at Nodes, feel free to use it for your own projects aswell.
 
 ## Usage:
