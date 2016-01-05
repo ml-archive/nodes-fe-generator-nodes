@@ -564,9 +564,11 @@ module.exports = yeoman.Base.extend({
 	install: function() {
 
 		// Unless skipped, run npm & bower install
-		this.installDependencies({
-			skipInstall: this.options['skip-install']
-		});
+		if(!this.options['skip-install']) {
+			this.installDependencies({
+				skipInstall: this.options['skip-install']
+			});
+		}
 
 	},
 
