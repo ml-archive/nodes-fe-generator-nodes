@@ -52,6 +52,8 @@ describe('nodes:app', function() {
 	var appPath = 'customAppPath';
 	var appName = 'custom_App Name';
 
+	this.timeout(5000);
+
 	beforeEach(function() {
 
 		this.nodes = helpers
@@ -83,7 +85,7 @@ describe('nodes:app', function() {
 			this.nodes.on('end', done);
 		});
 
-		it('generates the bass files', function() {
+		it('generates the base files', function() {
 			assert.file(getDefaultFilesForAppPath('app'));
 		});
 	});
