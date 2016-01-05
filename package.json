@@ -40,13 +40,17 @@
     "grunt": "0.4.5",
     "grunt-contrib-jshint": "0.11.3",
     "load-grunt-tasks": "3.4.0",
-    "semantic-release": "4.3.5"
+    "mocha": "2.3.4",
+    "semantic-release": "4.3.5",
+    "yeoman-assert": "2.1.1",
+    "yeoman-test": "1.0.0"
   },
   "engines": {
     "node": ">=0.10.0",
     "npm": ">=1.2.10"
   },
   "scripts": {
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "test": "mocha test/"
   }
 }
