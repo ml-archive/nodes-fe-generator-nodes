@@ -41,6 +41,8 @@
     "grunt": "0.4.5",
     "grunt-contrib-jshint": "0.11.3",
     "istanbul": "0.4.1",
+    "jshint": "2.9.1-rc2",
+    "jshint-stylish": "2.1.0",
     "load-grunt-tasks": "3.4.0",
     "mocha": "2.3.4",
     "semantic-release": "4.3.5",
