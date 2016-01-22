@@ -55,7 +55,6 @@ module.exports = yeoman.Base.extend({
 			"'API_ENDPOINTS'",
 			"'APPLICATION_SETTINGS'",
 			"'ui.router'",
-			"'config'",
 			"'angular-loading-bar'",
 			"'angulartics'",
 			"'angulartics.google.analytics'"
