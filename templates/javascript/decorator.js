@@ -1,6 +1,12 @@
 (function() {
 	'use strict';
 
+	/**
+	 * @name
+	 * @author
+	 * @description
+	 *
+	 */
 	angular
 		.module('<%= name %>')
 		.config(function ($provide) {

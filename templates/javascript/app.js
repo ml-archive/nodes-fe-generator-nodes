@@ -2,12 +2,10 @@
 	'use strict';
 
 	/**
-	 * @ngdoc overview
 	 * @name <%= appname %>
 	 * @description
-	 * # <%= appname %>
 	 *
-	 * Main module of the application.
+	 * Root Application Module
 	 */
 	angular
 		.module('<%= appname %>', [

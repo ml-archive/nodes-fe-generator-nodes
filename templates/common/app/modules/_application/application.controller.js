@@ -1,6 +1,12 @@
 (function () {
 	'use strict';
 
+	/**
+	 * @name application
+	 * @description
+	 *
+	 * Root Application Controller
+	 */
 	angular
 		.module('application')
 		.controller('Application', Application);

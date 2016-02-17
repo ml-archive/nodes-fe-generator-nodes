@@ -1,6 +1,12 @@
 (function() {
 	'use strict';
 
+	/**
+	 * @name index
+	 * @description
+	 *
+	 * Index state configuration
+	 */
 	angular.module('index')
 		/* @ngInject */
 		.config(function ($stateProvider) {

@@ -1,6 +1,12 @@
-(function () {
+(function() {
 	'use strict';
 
+	/**
+	 * @name config
+	 * @description
+	 *
+	 * Glboal Configuration Module
+	 */
 	var core = angular.module('config', [
 		'DEBUG_ENV',
 		'APPLICATION_SETTINGS',

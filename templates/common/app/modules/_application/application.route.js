@@ -1,9 +1,15 @@
 (function() {
 	'use strict';
 
+	/**
+	 * @name application
+	 * @description
+	 *
+	 * Root Application state configuration
+	 */
 	angular.module('application')
 		/* @ngInject */
-		.config(function ($stateProvider) {
+		.config(function($stateProvider) {
 
 			var Application = {
 				name: 'application',

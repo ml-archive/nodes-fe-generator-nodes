@@ -1,6 +1,12 @@
 (function () {
 	'use strict';
 
+	/**
+	 * @name
+	 * @author
+	 * @description
+	 *
+	 */
 	angular
 		.module('<%= moduleName %>')
 		.controller('<%= name %>Controller', <%= classedName %>);
