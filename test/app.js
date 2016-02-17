@@ -95,12 +95,28 @@ describe('nodes:app', function() {
 			this.nodes.on('end', done);
 		});
 
-		it('slugify the ng-app name', function() {
+		it('slugifies the ng-app name', function() {
 			assert.fileContent(
 				'app/index.html',
 				/ng-app="custom-app-name"/
 			);
 		});
 	});
+
+	// Todo: Add proper test for existense of required Angular modules.
+	//describe('core dependencies', function() {
+	//	beforeEach(function(done) {
+	//		this.nodes.on('end', done);
+	//	});
+	//
+	//	it('loads the required depencies', function() {
+	//
+	//		var reg = new RegExp("/\[\n\t\t\t'DEBUG_ENV',\n\t\t\t'API_ENDPOINTS',\n\t\t\t'APPLICATION_SETTINGS',\n\t\t\t'ui.router',\n\t\t\t'config',\n\t\t\t'angular-loading-bar',\n\t\t\t'angulartics',\n\t\t\t'angulartics.google.analytics'", 'gm');
+	//
+	//		assert.fileContent('app/config/app.js', reg);
+	//
+	//	});
+	//
+	//});
 
 });
