@@ -15,7 +15,8 @@
 		"angular-ui-router": "^0.2.10",
 		"angular-loading-bar": "^0.8.0",
 		"angular-busy": "^4.1.0",
-		"angulartics": "^0.20.0"
+		"angulartics": "~1.0.0",
+		"angulartics-google-analytics": "~0.1.4"
 	},
 	"appPath": "<%= appPath %>",
 	"resolutions": {
