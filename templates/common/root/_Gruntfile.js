@@ -28,6 +28,9 @@ var bowerIgnore = [
 	'angulartics-intercom',
 	'angulartics-piwik',
 	'angulartics-cnzz',
+	'angulartics-clicky',
+	'angulartics-inspectlet',
+	'angulartics-newrelic-insights',
 	'foundation.js',
 	'waypoints',
 	'sha1'

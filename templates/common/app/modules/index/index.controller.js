@@ -1,6 +1,12 @@
 (function () {
 	'use strict';
 
+	/**
+	 * @name index
+	 * @description
+	 *
+	 * Index Controller
+	 */
 	angular
 		.module('index')
 		.controller('Index', Index);

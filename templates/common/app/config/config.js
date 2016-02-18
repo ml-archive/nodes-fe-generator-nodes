@@ -1,9 +1,26 @@
 (function() {
 	'use strict';
 
-	angular
-		.module('config')
-		.config(configure);
+	/**
+	 * @name config
+	 * @description
+	 *
+	 * Glboal Configuration Module
+	 */
+	var core = angular.module('config', [
+		'DEBUG_ENV',
+		'APPLICATION_SETTINGS',
+		'angular-loading-bar',
+		'cgBusy'
+	]);
+
+	core.value('cgBusyDefaults', {
+		message:'Loading Stuff',
+		backdrop: true,
+		templateUrl: '../common/core/loadingindicator/loadingindicator.template.html'
+	});
+
+	core.config(configure);
 
 	/* @ngInject */
 	function configure(DEBUG_ENV,
