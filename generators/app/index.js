@@ -62,6 +62,7 @@ module.exports = yeoman.Base.extend({
 
 		// Application modules
 		this.projectModules = [
+			"'config'",
 			"'application'",
 			"'index'"
 		];
