@@ -37,32 +37,32 @@ The following grunt tasks are available:
 Available basic generators:
 
 
-* <a href="https://github.com/nodesagency/generator-nodes/tree/master/generators/app" target="_blank">nodes (aka nodes:app)</a>
+* <a href="https://github.com/nodes-frontend/generator-nodes/tree/master/generators/app" target="_blank">nodes (aka nodes:app)</a>
 
 ---
 
-* <a href="https://github.com/nodesagency/generator-nodes/tree/master/generators/constant" target="_blank">nodes:constant</a>
-* <a href="https://github.com/nodesagency/generator-nodes/tree/master/generators/value" target="_blank">nodes:value</a>
-* <a href="https://github.com/nodesagency/generator-nodes/tree/master/generators/controller" target="_blank">nodes:controller</a>
-* <a href="https://github.com/nodesagency/generator-nodes/tree/master/generators/factory" target="_blank">nodes:factory</a>
-* <a href="https://github.com/nodesagency/generator-nodes/tree/master/generators/service" target="_blank">nodes:service</a>
-* <a href="https://github.com/nodesagency/generator-nodes/tree/master/generators/decorator" target="_blank">nodes:decorator</a>
-* <a href="https://github.com/nodesagency/generator-nodes/tree/master/generators/provider" target="_blank">nodes:provider</a>
-* <a href="https://github.com/nodesagency/generator-nodes/tree/master/generators/directive" target="_blank">nodes:directive</a>
-* <a href="https://github.com/nodesagency/generator-nodes/tree/master/generators/filter" target="_blank">nodes:filter</a>
-* <a href="https://github.com/nodesagency/generator-nodes/tree/master/generators/route" target="_blank">nodes:route</a>
-* <a href="https://github.com/nodesagency/generator-nodes/tree/master/generators/module" target="_blank">nodes:module</a>
-* <a href="https://github.com/nodesagency/generator-nodes/tree/master/generators/html" target="_blank">nodes:html</a>
-* <a href="https://github.com/nodesagency/generator-nodes/tree/master/generators/scss" target="_blank">nodes:scss</a>
-* <a href="https://github.com/nodesagency/generator-nodes/tree/master/generators/font" target="_blank">nodes:font</a>
+* <a href="https://github.com/nodes-frontend/generator-nodes/tree/master/generators/constant" target="_blank">nodes:constant</a>
+* <a href="https://github.com/nodes-frontend/generator-nodes/tree/master/generators/value" target="_blank">nodes:value</a>
+* <a href="https://github.com/nodes-frontend/generator-nodes/tree/master/generators/controller" target="_blank">nodes:controller</a>
+* <a href="https://github.com/nodes-frontend/generator-nodes/tree/master/generators/factory" target="_blank">nodes:factory</a>
+* <a href="https://github.com/nodes-frontend/generator-nodes/tree/master/generators/service" target="_blank">nodes:service</a>
+* <a href="https://github.com/nodes-frontend/generator-nodes/tree/master/generators/decorator" target="_blank">nodes:decorator</a>
+* <a href="https://github.com/nodes-frontend/generator-nodes/tree/master/generators/provider" target="_blank">nodes:provider</a>
+* <a href="https://github.com/nodes-frontend/generator-nodes/tree/master/generators/directive" target="_blank">nodes:directive</a>
+* <a href="https://github.com/nodes-frontend/generator-nodes/tree/master/generators/filter" target="_blank">nodes:filter</a>
+* <a href="https://github.com/nodes-frontend/generator-nodes/tree/master/generators/route" target="_blank">nodes:route</a>
+* <a href="https://github.com/nodes-frontend/generator-nodes/tree/master/generators/module" target="_blank">nodes:module</a>
+* <a href="https://github.com/nodes-frontend/generator-nodes/tree/master/generators/html" target="_blank">nodes:html</a>
+* <a href="https://github.com/nodes-frontend/generator-nodes/tree/master/generators/scss" target="_blank">nodes:scss</a>
+* <a href="https://github.com/nodes-frontend/generator-nodes/tree/master/generators/font" target="_blank">nodes:font</a>
 
 ---
 
 Available advanced generators:
-* <a href="https://github.com/nodesagency/generator-nodes/tree/master/generators/state" target="_blank">nodes:state</a>
-* <a href="https://github.com/nodesagency/generator-nodes/tree/master/generators/child-state" target="_blank">nodes:child-state</a>
-* <a href="https://github.com/nodesagency/generator-nodes/tree/master/generators/model" target="_blank">nodes:model</a>
-* <a href="https://github.com/nodesagency/generator-nodes/tree/master/generators/component" target="_blank">nodes:component</a>
+* <a href="https://github.com/nodes-frontend/generator-nodes/tree/master/generators/state" target="_blank">nodes:state</a>
+* <a href="https://github.com/nodes-frontend/generator-nodes/tree/master/generators/child-state" target="_blank">nodes:child-state</a>
+* <a href="https://github.com/nodes-frontend/generator-nodes/tree/master/generators/model" target="_blank">nodes:model</a>
+* <a href="https://github.com/nodes-frontend/generator-nodes/tree/master/generators/component" target="_blank">nodes:component</a>
 
 ## Project structure
 
