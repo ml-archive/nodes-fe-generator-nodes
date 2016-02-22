@@ -4,15 +4,17 @@ Sets up a new Angular app, generating all the boilerplate you need to get starte
 
 The following modules are always installed by the generator:
 
-* nCore
-* nTranslate
+The following modules are always installed by the generator:
+
 * ui.router
 * angular-loading-bar
 * cgBusy
-* angulartics
+* angulartics + angulartics.google.analytics
 
 The following components can be installed when running the generator:
 
+* nCore
+* nTranslate
 * Foundation + Angular-foundation
 * Greensock Animation Platform
 * Lodash + ngLodash

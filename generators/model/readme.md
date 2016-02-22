@@ -1,6 +1,6 @@
 # nodes:model
 
-Creates a factory(Class) and service to act as a model module. This generator uses the following generators:
+Creates a factory(Class/Constructor) and service(Api) to act as a model module. This generator uses the following generators:
 
 * nodes:module
 * nodes:factory
