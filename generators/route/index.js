@@ -120,6 +120,7 @@ module.exports = nodesGenerator.extend({
 			this.moduleName = (this.options['skip-module'] || this.options.provideModule) ? this.moduleName : this.cameledName;
 			this.fileName = this.name + '.route.js';
 			this.destinationFullPath = path.join('modules', this.moduleLocation, this.fileName);
+			this.templateUrl = path.join('modules', this.moduleLocation);
 
 			this.scriptTemplate(
 				this.templatePath('javascript/route.js'),
@@ -127,7 +128,8 @@ module.exports = nodesGenerator.extend({
 				{
 					moduleName: this.moduleName,
 					name: this.classedName,
-					lowercaseName: this.lowercasedName
+					lowercaseName: this.lowercasedName,
+					templateUrl: this.templateUrl
 				}
 			);
 

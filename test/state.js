@@ -22,7 +22,7 @@ describe('nodes:state', function() {
 						require.resolve('../generators/scss')
 					])
 					.withPrompts({
-						location: 'list'
+						location: 'nested/list'
 					})
 					.withArguments(['list']);
 
@@ -39,12 +39,27 @@ describe('nodes:state', function() {
 		this.nodesState.on('end', function() {
 
 			assert.file([
-				'app/modules/list/list.module.js',
-				'app/modules/list/list.route.js',
-				'app/modules/list/list.controller.js',
-				'app/modules/list/list.template.html',
-				'app/modules/list/_list.scss'
+				'app/modules/nested/list/list.module.js',
+				'app/modules/nested/list/list.route.js',
+				'app/modules/nested/list/list.controller.js',
+				'app/modules/nested/list/list.template.html',
+				'app/modules/nested/list/_list.scss'
 			]);
+
+			done();
+
+		});
+
+	});
+
+	it('supports nested folders', function(done) {
+
+		this.nodesState.on('end', function() {
+
+			assert.fileContent(
+				'app/modules/nested/list/list.route.js',
+				/templateUrl: 'modules\/nested\/list\/list\.template\.html'/
+			);
 
 			done();
 

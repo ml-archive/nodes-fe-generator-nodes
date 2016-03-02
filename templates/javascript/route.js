@@ -16,7 +16,7 @@
 				url: '/<%= lowercaseName %>',
 				views: {
 					'application@application': {
-						templateUrl: 'modules/<%= lowercaseName %>/<%= lowercaseName %>.template.html',
+						templateUrl: '<%= templateUrl %>/<%= lowercaseName %>.template.html',
 						controller: '<%= name %>Controller',
 						controllerAs: '<%= lowercaseName %>'
 					}
