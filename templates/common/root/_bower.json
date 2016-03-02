@@ -1,4 +1,4 @@
-{<% var ngVer = "1.4.0" %>
+{<% var ngVer = "1.5.0" %>
 "name": "<%= appname %>",
 "version": "1.0.0",
 	"dependencies": {
