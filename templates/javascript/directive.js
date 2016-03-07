@@ -13,10 +13,8 @@
 
 	/* @ngInject */
 	function <%= classedName %>() {
-		var directive = {
-            <% if (html) { %>
-			templateUrl: '<%= filePath %>/<%= name.toLowerCase() %>.template.html',
-            <% } %>
+		var directive = {<% if (html) { %>
+			templateUrl: '<%= filePath %>/<%= name.toLowerCase() %>.template.html',<% } %>
 			link: link,
 			restrict: 'EA'
 		};

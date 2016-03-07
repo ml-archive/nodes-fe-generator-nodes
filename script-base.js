@@ -90,6 +90,10 @@ Generator.prototype.importToScss = function(destinationPath, type) {
 			needleIdentifier = 'Directives';
 			splicable = '../';
 			break;
+		case 'ngComponent':
+			needleIdentifier = 'Components';
+			splicable = '../';
+			break;
 		case 'module':
 			needleIdentifier = 'Modules';
 			splicable = '../';

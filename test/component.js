@@ -16,21 +16,16 @@ describe('nodes:component', function() {
 				this.nodesComponent = helpers.run(require.resolve('../generators/component'))
 					.withGenerators([
 						require.resolve('../generators/module'),
-						require.resolve('../generators/directive'),
 						require.resolve('../generators/html'),
 						require.resolve('../generators/scss')
 					])
-					.withOptions({
-
-					})
 					.withPrompts({
-						html: true,
-						scss: true,
+						html: false,
+						scss: false,
 						type: 'common',
-						location: 'component',
-						moduleName: 'appComponent'
+						location: 'component'
 					})
-					.withArguments(['app-component']);
+					.withArguments(['my-component']);
 
 				this.nodesComponent.inDirSet = true;
 
@@ -40,16 +35,44 @@ describe('nodes:component', function() {
 
 	});
 
-	it('generates default component items', function(done) {
+	it('generates the default component files', function(done) {
 
 		this.nodesComponent.on('end', function() {
 
 			assert.file([
-				'app/common/component/app-component.module.js',
-				'app/common/component/app-component.directive.js',
-				'app/common/component/app-component.template.html',
-				'app/common/component/_app-component.scss'
+				'app/common/component/my-component.module.js',
+				'app/common/component/my-component.component.js'
 			]);
+
+			done();
+
+		});
+
+	});
+
+	it('generates the component module', function(done) {
+
+		this.nodesComponent.on('end', function() {
+
+			assert.fileContent(
+					'app/common/component/my-component.module.js',
+					/module\('myComponent'/
+			);
+
+			done();
+
+		});
+
+	});
+
+	it('converts the component name to camelCase', function(done) {
+
+		this.nodesComponent.on('end', function() {
+
+			assert.fileContent(
+					'app/common/component/my-component.component.js',
+					/.component\('myComponent'/
+			);
 
 			done();
 

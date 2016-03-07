@@ -1,6 +1,6 @@
 # nodes:component
 
-Creates and configures an component based UI-Component (component + template + scss). This generator uses the following generators:
+Creates and configures an directive based UI-Component (directive + template + scss). This generator uses the following generators:
 
 * nodes:module
 * nodes:directive

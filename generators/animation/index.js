@@ -1,6 +1,7 @@
 /**
  * @author Dennis Haulund Nielsen
  */
+
 'use strict';
 
 var fs				= require('fs');
@@ -18,7 +19,7 @@ module.exports = nodesGenerator.extend({
 		nodesGenerator.apply(this, arguments);
 
 		this.option('skip-module', {
-			desc: 'Skips registerring the directive as a standalone angular module',
+			desc: 'Skips registerring the controller as a standalone angular module',
 			type: Boolean
 		});
 
@@ -42,68 +43,11 @@ module.exports = nodesGenerator.extend({
 			type: String
 		});
 
-		this.option('skipHtml', {
-			desc: 'Skips creating a html template for this directive',
-			type: String
-		});
-
-		this.option('skipScss', {
-			desc: 'Skips creating a scss file for this directive',
-			type: String
-		});
-
-		this.option('hasTemplate', {
-			desc: 'Allows other generators to provide the template-url parameter',
-			type: Boolean
-		});
+		this.log(chalk.green('Note: We will preped a . to your Animation name declaration. (do: my-animation - dont: .my-animation, .myAnimation)'));
 
 	},
 
 	prompting: {
-
-		promptForModuleHtml: function() {
-
-			if(this.options.skipHtml) {
-				return;
-			}
-
-			var done = this.async();
-
-			var prompt = {
-				type: 'confirm',
-				name: 'html',
-				message: chalk.green('Does this directive need a html template?'),
-				default: true
-			};
-
-			this.prompt(prompt, function(answer) {
-				this.html = answer.html;
-				done();
-			}.bind(this));
-
-		},
-
-		promptForModuleScss: function() {
-
-			if(this.options.skipScss) {
-				return;
-			}
-
-			var done = this.async();
-
-			var prompt = {
-				type: 'confirm',
-				name: 'scss',
-				message: chalk.green('Does this directive need a scss file?'),
-				default: true
-			};
-
-			this.prompt(prompt, function(answer) {
-				this.scss = answer.scss;
-				done();
-			}.bind(this));
-
-		},
 
 		promptForModuleType: function() {
 
@@ -117,7 +61,7 @@ module.exports = nodesGenerator.extend({
 			var prompt = {
 				type: 'list',
 				name: 'type',
-				message: chalk.green('What type of directive is this?'),
+				message: chalk.green('What type of animation is this?'),
 				choices: [
 					'common',
 					'modules'
@@ -143,7 +87,7 @@ module.exports = nodesGenerator.extend({
 			var prompt = {
 				type: 'input',
 				name: 'location',
-				message: chalk.green('Which folder should i create the directive in?'),
+				message: chalk.green('Which folder should i create the animation in?'),
 				default: this.name
 			};
 
@@ -168,7 +112,7 @@ module.exports = nodesGenerator.extend({
 			var prompt = {
 				type: 'input',
 				name: 'moduleName',
-				message: chalk.yellow('You told me to skip creating an Angular module \nWhich module does this directive belong to?'),
+				message: chalk.yellow('You told me to skip creating an Angular module \nWhich module does this animation belong to?'),
 				default: this.appname
 			};
 
@@ -200,66 +144,29 @@ module.exports = nodesGenerator.extend({
 
 		},
 
-		directive: function() {
+		animation: function() {
 
 			if(this.options.provideModule) {
 				this.moduleName = this.options.provideModuleName;
 			}
-			if(this.options.hasTemplate) {
-				this.html = true;
-			}
+
+			this.dashedName = _string.dasherize(this.name);
 
 			this.moduleName = (this.options['skip-module'] || this.options.provideModule) ? this.moduleName : this.cameledName;
-			this.fileName = this.name + '.directive.js';
+			this.fileName = this.name + '.animation.js';
 			this.destinationFullPath = path.join(this.moduleType, this.moduleLocation, this.fileName);
 
 			this.scriptTemplate(
-				this.templatePath('javascript/directive.js'),
+				this.templatePath('javascript/animation.js'),
 				path.join('app', this.destinationFullPath),
 				{
 					moduleName: this.moduleName,
-					name: this.name,
+					name: this.classedName,
+					lowercaseName: this.lowercasedName,
 					classedName: this.classedName,
-					cameledName: this.cameledName,
-					html: this.html,
-					filePath: path.join(this.moduleType, this.moduleLocation)
+					dashedName: this.dashedName
 				}
 			);
-
-		},
-
-		html: function() {
-
-			if(!this.html) {
-				return;
-			}
-
-			var destinationPath = path.join('app', this.moduleType, this.moduleLocation, this.name + '.template.html');
-
-			this.composeWith('nodes:html', {
-				args: [this.name],
-				options: {
-					destinationPath: destinationPath
-				}
-			}, {});
-
-		},
-
-		scss: function() {
-
-			if(!this.scss) {
-				return;
-			}
-
-			var destinationPath = path.join(this.moduleType, this.moduleLocation);
-
-			this.composeWith('nodes:scss', {
-				args: [this.name],
-				options: {
-					destinationPath: destinationPath,
-					scssType: 'directive'
-				}
-			}, {});
 
 		}
 

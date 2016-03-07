@@ -54,6 +54,7 @@ module.exports = nodesGenerator.extend({
 					'elements',
 					'components',
 					'directive',
+					'ngComponent',
 					'module'
 				]
 			};
@@ -67,7 +68,7 @@ module.exports = nodesGenerator.extend({
 
 		promptForNgType: function() {
 
-			if(this.scssType === 'directive' || this.scssType === 'module') {
+			if(this.scssType === 'directive' || this.scssType === 'module' || this.scssType === 'ngComponent') {
 				this.belongsToAngular = true;
 			}
 
@@ -75,7 +76,7 @@ module.exports = nodesGenerator.extend({
 				return;
 			}
 
-			if(this.scssType === 'directive' || this.scssType === 'module') {
+			if(this.scssType === 'directive' || this.scssType === 'module' || this.scssType === 'ngComponent') {
 
 				var done = this.async();
 
