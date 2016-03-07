@@ -66,11 +66,11 @@ module.exports = nodesGenerator.extend({
 
 		},
 
-		directive: function() {
+		component: function() {
 
 			var destinationPath = path.join(this.moduleLocation);
 
-			this.composeWith('nodes:directive', {
+			this.composeWith('nodes:component', {
 				args: [this.name],
 				options: {
 					destinationPath: destinationPath,
@@ -106,7 +106,7 @@ module.exports = nodesGenerator.extend({
 				args: [this.name],
 				options: {
 					destinationPath: destinationPath,
-					scssType: 'directive'
+					scssType: 'ngComponent'
 				}
 			});
 

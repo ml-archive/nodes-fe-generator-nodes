@@ -251,10 +251,12 @@ module.exports = nodesGenerator.extend({
 				return;
 			}
 
+			var destinationPath = path.join(this.moduleType, this.moduleLocation);
+
 			this.composeWith('nodes:scss', {
 				args: [this.name],
 				options: {
-					destinationPath: this.moduleType,
+					destinationPath: destinationPath,
 					scssType: 'directive'
 				}
 			}, {});

@@ -6,14 +6,14 @@ var helpers = require('yeoman-test');
 var assert = require('yeoman-assert');
 var generateFullProject = require('./utils').generateFullProject;
 
-describe('nodes:directive', function() {
+describe('nodes:component', function() {
 
 	beforeEach(function(done) {
 
 		generateFullProject()
 			.on('end', function() {
 
-				this.nodesDirective = helpers.run(require.resolve('../generators/directive'))
+				this.nodesComponent = helpers.run(require.resolve('../generators/component'))
 					.withGenerators([
 						require.resolve('../generators/module'),
 						require.resolve('../generators/html'),
@@ -23,11 +23,11 @@ describe('nodes:directive', function() {
 						html: false,
 						scss: false,
 						type: 'common',
-						location: 'directive'
+						location: 'component'
 					})
-					.withArguments(['my-directive']);
+					.withArguments(['my-component']);
 
-				this.nodesDirective.inDirSet = true;
+				this.nodesComponent.inDirSet = true;
 
 				done();
 
@@ -35,13 +35,13 @@ describe('nodes:directive', function() {
 
 	});
 
-	it('generates the default directive files', function(done) {
+	it('generates the default component files', function(done) {
 
-		this.nodesDirective.on('end', function() {
+		this.nodesComponent.on('end', function() {
 
 			assert.file([
-				'app/common/directive/my-directive.module.js',
-				'app/common/directive/my-directive.directive.js'
+				'app/common/component/my-component.module.js',
+				'app/common/component/my-component.component.js'
 			]);
 
 			done();
@@ -50,13 +50,13 @@ describe('nodes:directive', function() {
 
 	});
 
-	it('generates the directive module', function(done) {
+	it('generates the component module', function(done) {
 
-		this.nodesDirective.on('end', function() {
+		this.nodesComponent.on('end', function() {
 
 			assert.fileContent(
-					'app/common/directive/my-directive.module.js',
-					/module\('myDirective'/
+					'app/common/component/my-component.module.js',
+					/module\('myComponent'/
 			);
 
 			done();
@@ -65,13 +65,13 @@ describe('nodes:directive', function() {
 
 	});
 
-	it('converts the directive name to camelCase', function(done) {
+	it('converts the component name to camelCase', function(done) {
 
-		this.nodesDirective.on('end', function() {
+		this.nodesComponent.on('end', function() {
 
 			assert.fileContent(
-					'app/common/directive/my-directive.directive.js',
-					/.directive\('myDirective'/
+					'app/common/component/my-component.component.js',
+					/.component\('myComponent'/
 			);
 
 			done();

@@ -9,22 +9,16 @@
 	 */
 	angular
 		.module('<%= moduleName %>')
-	  	.directive('<%= cameledName %>', <%= classedName %>);
+	  	.component('<%= cameledName %>', {
+			bindings: {},<% if (html) { %>
+			templateUrl: '<%= filePath %>/<%= name.toLowerCase() %>.template.html',<% } %>
+			controller: <%= cameledName %>Controller
+		});
 
 	/* @ngInject */
-	function <%= classedName %>() {
-		var directive = {
-            <% if (html) { %>
-			templateUrl: '<%= filePath %>/<%= name.toLowerCase() %>.template.html',
-            <% } %>
-			link: link,
-			restrict: 'EA'
-		};
+	function <%= cameledName %>Controller() {
+		/*jshint validthis: true */
+		var vm = this;
+	};
 
-		return directive;
-
-		function link(scope, element, attrs){
-			element.text('this is the <%= cameledName %> directive');
-		}
-	}
 })();

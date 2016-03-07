@@ -6,14 +6,14 @@ var helpers = require('yeoman-test');
 var assert = require('yeoman-assert');
 var generateFullProject = require('./utils').generateFullProject;
 
-describe('nodes:component', function() {
+describe('nodes:ui-component', function() {
 
 	beforeEach(function(done) {
 
 		generateFullProject()
 			.on('end', function() {
 
-				this.nodesDirectiveComponent = helpers.run(require.resolve('../generators/directive-component'))
+				this.nodesDirectiveComponent = helpers.run(require.resolve('../generators/ui-directive'))
 					.withGenerators([
 						require.resolve('../generators/module'),
 						require.resolve('../generators/directive'),
@@ -27,10 +27,10 @@ describe('nodes:component', function() {
 						html: true,
 						scss: true,
 						type: 'common',
-						location: 'component',
-						moduleName: 'appComponent'
+						location: 'ui-directive',
+						moduleName: 'uiDirective'
 					})
-					.withArguments(['app-component']);
+					.withArguments(['ui-directive']);
 
 				this.nodesDirectiveComponent.inDirSet = true;
 
@@ -40,15 +40,15 @@ describe('nodes:component', function() {
 
 	});
 
-	it('generates default component items', function(done) {
+	it('generates default directive items', function(done) {
 
 		this.nodesDirectiveComponent.on('end', function() {
 
 			assert.file([
-				'app/common/component/app-component.module.js',
-				'app/common/component/app-component.directive.js',
-				'app/common/component/app-component.template.html',
-				'app/common/component/_app-component.scss'
+				'app/common/ui-directive/ui-directive.module.js',
+				'app/common/ui-directive/ui-directive.directive.js',
+				'app/common/ui-directive/ui-directive.template.html',
+				'app/common/ui-directive/_ui-directive.scss'
 			]);
 
 			done();
