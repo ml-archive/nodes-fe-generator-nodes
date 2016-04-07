@@ -73,7 +73,7 @@ module.exports = nodesGenerator.extend({
 
 	end: function() {
 
-		this.dependencyToApp(this.name);
+		this.dependencyToApp(this.cameledName);
 
 	}
 
