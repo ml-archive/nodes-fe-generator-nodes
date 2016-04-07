@@ -9,7 +9,7 @@
 	 */
 	angular
 		.module('<%= moduleName %>')
-	  	.component('<%= cameledName %>', {
+		.component('<%= cameledName %>', {
 			bindings: {},<% if (html) { %>
 			templateUrl: '<%= filePath %>/<%= name.toLowerCase() %>.template.html',<% } %>
 			controller: <%= cameledName %>Controller
