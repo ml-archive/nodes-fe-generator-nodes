@@ -13,7 +13,7 @@
 
 	/* @ngInject */
 	function <%= name %>() {
-		return function (input) {
+		return function(input) {
 			return '<%= name %> filter: ' + input;
 		};
 	}

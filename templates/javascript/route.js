@@ -9,7 +9,7 @@
 	 */
 	angular.module('<%= moduleName %>')
 		/* @ngInject */
-		.config(function ($stateProvider) {
+		.config(function($stateProvider) {
 
 			var <%= name %> = {
 				name: 'application.<%= lowercaseName %>',
