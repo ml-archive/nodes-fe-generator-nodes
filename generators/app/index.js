@@ -552,8 +552,8 @@ module.exports = yeoman.Base.extend({
 			);
 
 			this.fs.copy(
-				this.templatePath('common/root/.htaccess'),
-				this.destinationPath('.htaccess')
+				this.templatePath('common/app/.htaccess'),
+				this.destinationPath('app/.htaccess')
 			);
 
 		}
