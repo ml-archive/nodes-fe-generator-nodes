@@ -7,6 +7,7 @@ var assert = require('yeoman-assert');
 var getDefaultFilesForAppPath = function(appPath) {
 
 	return [
+		appPath + '/.htaccess',
 		appPath + '/404.html',
 		appPath + '/503.html',
 		appPath + '/favicon.ico',
@@ -32,7 +33,6 @@ var getDefaultFilesForAppPath = function(appPath) {
 		appPath + '/styles/_fonts.scss',
 		appPath + '/styles/_normalize.scss',
 		appPath + '/styles/_variables.scss',
-		'.htaccess',
 		'.bowerrc',
 		'.npmrc',
 		'.jshintrc',
