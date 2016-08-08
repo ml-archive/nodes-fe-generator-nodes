@@ -10,9 +10,9 @@ Opinionated workflow and toolkit used for Angular front-end development at Nodes
 
 #### Prerequisites:
 
-Install `yo`, `grunt-cli`, `bower` and `generator-angular` globally:
+Install `yo`, `grunt-cli`, `bower` and `generator-nodes` globally:
 ```
-npm install -g grunt-cli bower yo generator-angular
+npm install -g grunt-cli bower yo generator-mpdes
 ```
 
 Make a new directory, and `cd` into it:
