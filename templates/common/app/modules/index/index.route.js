@@ -9,7 +9,7 @@
 	 */
 	angular.module('index')
 		/* @ngInject */
-		.config(function ($stateProvider) {
+		.config(function($stateProvider) {
 
 			var Index = {
 				name: 'application.index',
