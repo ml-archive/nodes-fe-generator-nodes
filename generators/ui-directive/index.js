@@ -76,7 +76,7 @@ module.exports = nodesGenerator.extend({
 					destinationPath: destinationPath,
 					moduleType: 'common',
 					provideModule: true,
-					provideModuleName: this.name,
+					provideModuleName: this.cameledName,
 					skipHtml: true,
 					skipScss: true,
 					hasTemplate: true

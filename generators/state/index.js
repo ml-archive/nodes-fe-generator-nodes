@@ -75,7 +75,7 @@ module.exports = nodesGenerator.extend({
 				options: {
 					destinationPath: destinationPath,
 					provideModule: true,
-					provideModuleName: this.name
+					provideModuleName: this.cameledName
 				}
 			});
 
@@ -91,7 +91,7 @@ module.exports = nodesGenerator.extend({
 					destinationPath: destinationPath,
 					moduleType: 'modules',
 					provideModule: true,
-					provideModuleName: this.name
+					provideModuleName: this.cameledName
 				}
 			});
 

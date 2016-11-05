@@ -16,8 +16,6 @@ module.exports = nodesGenerator.extend({
 
 	constructor: function() {
 		
-		console.log('FISSE');
-
 		nodesGenerator.apply(this, arguments);
 
 		this.option('skip-module', {
@@ -130,8 +128,6 @@ module.exports = nodesGenerator.extend({
 		},
 		
 		promptForCommonModules: function() {
-			
-			console.log('AAAAAAAAAA');
 			
 			if(this.options.injectCommonModules) {
 				return;
