@@ -19,7 +19,8 @@ describe('nodes:service', function() {
 					])
 					.withPrompts({
 						type: 'models',
-						location: 'service'
+						location: 'service',
+						injectCommonModules: false
 					})
 					.withArguments(['service']);
 
@@ -74,6 +75,21 @@ describe('nodes:service', function() {
 
 		});
 
+	});
+	
+	it('injects $exceptionHandler, $q, $http, API_ENDPOINTS modules', function(done) {
+		
+		this.nodesservice.on('end', function() {
+			
+			assert.fileContent(
+				'app/models/service/service.service.js',
+				//
+			);
+			
+			done();
+			
+		});
+		
 	});
 
 });

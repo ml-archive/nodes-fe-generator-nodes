@@ -15,6 +15,8 @@ var nodesGenerator 	= require('../../script-base.js');
 module.exports = nodesGenerator.extend({
 
 	constructor: function() {
+		
+		console.log('FISSE');
 
 		nodesGenerator.apply(this, arguments);
 
@@ -41,6 +43,11 @@ module.exports = nodesGenerator.extend({
 		this.option('moduleType', {
 			desc: 'Allows other subgenerators to provide a module type',
 			type: String
+		});
+		
+		this.option('injectCommonModules', {
+			desc: 'Will inject commonly used modules ($exceptionhandler, $q, $http, API_ENDPOINTS)',
+			type: Boolean
 		});
 
 	},
@@ -120,6 +127,30 @@ module.exports = nodesGenerator.extend({
 				done();
 			}.bind(this));
 
+		},
+		
+		promptForCommonModules: function() {
+			
+			console.log('AAAAAAAAAA');
+			
+			if(this.options.injectCommonModules) {
+				return;
+			}
+			
+			var done = this.async();
+			
+			var prompt = {
+				type: 'confirm',
+				name: 'injectCommonModules',
+				message: chalk.green('Would you like to include the $exceptionHandler, $q, $http and API_ENDPOINTS modules?'),
+				default: true
+			};
+			
+			this.prompt(prompt, function(answer) {
+				this.injectCommonModules = answer.injectCommonModules;
+				done();
+			}.bind(this));
+			
 		}
 
 	},
@@ -148,7 +179,10 @@ module.exports = nodesGenerator.extend({
 			if(this.options.provideModule) {
 				this.moduleName = this.options.provideModuleName;
 			}
-
+			if(this.options.injectCommonModules) {
+				this.injectCommonModules = this.options.injectCommonModules;
+			}
+			
 			this.moduleName = (this.options['skip-module'] || this.options.provideModule) ? this.moduleName : this.cameledName;
 			this.fileName = this.name + '.service.js';
 			this.destinationFullPath = path.join(this.moduleType, this.moduleLocation, this.fileName);
@@ -161,6 +195,7 @@ module.exports = nodesGenerator.extend({
 					name: this.classedName,
 					lowercaseName: this.lowercasedName,
 					classedName: this.classedName,
+					injectCommonModules: this.injectCommonModules
 				}
 			);
 

@@ -23,7 +23,8 @@ describe('nodes:model', function() {
 
 					})
 					.withPrompts({
-						location: 'user'
+						location: 'user',
+						injectCommonModules: false
 					})
 					.withArguments(['user']);
 

@@ -12,9 +12,9 @@
 		.service('<%= name %>Service', <%= classedName %>);
 
 	/* @ngInject */
-	function <%= classedName %>() {
+	function <%= classedName %>(<% if (injectCommonModules) { %><%= '$exceptionHandler, $q, $http, API_ENDPOINTS' %><% } %>) {
 		/*jshint validthis: true */
-
+		
 		// Variables
 
 		return {

@@ -66,22 +66,6 @@ module.exports = nodesGenerator.extend({
 
 		},
 
-		factory: function() {
-
-			var destinationPath = path.join(this.moduleLocation);
-
-			this.composeWith('nodes:factory', {
-				args: [this.name],
-				options: {
-					destinationPath: destinationPath,
-					moduleType: 'models',
-					provideModule: true,
-					provideModuleName: this.pluralizedName
-				}
-			});
-
-		},
-
 		service: function() {
 
 			var destinationPath = path.join(this.moduleLocation);
@@ -92,7 +76,8 @@ module.exports = nodesGenerator.extend({
 					destinationPath: destinationPath,
 					moduleType: 'models',
 					provideModule: true,
-					provideModuleName: this.pluralizedName
+					provideModuleName: this.pluralizedName,
+					injectCommonModules: true
 				}
 			});
 
