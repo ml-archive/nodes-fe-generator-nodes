@@ -12,11 +12,11 @@
 		.component('<%= cameledName %>', {
 			bindings: {},<% if (html) { %>
 			templateUrl: '<%= filePath %>/<%= name.toLowerCase() %>.template.html',<% } %>
-			controller: <%= cameledName %>Controller
+			controller: <%= classedName %>Component
 		});
 
 	/* @ngInject */
-	function <%= cameledName %>Controller() {
+	function <%= classedName %>Component() {
 		/*jshint validthis: true */
 		var vm = this;
 	};

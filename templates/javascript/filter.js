@@ -9,10 +9,10 @@
 	 */
 	angular
 		.module('<%= moduleName %>')
-		.filter('<%= lowercase %>', <%= name %>);
+		.filter('<%= lowercase %>', <%= name %>Filter);
 
 	/* @ngInject */
-	function <%= name %>() {
+	function <%= name %>Filter() {
 		return function(input) {
 			return '<%= name %> filter: ' + input;
 		};

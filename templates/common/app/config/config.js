@@ -8,14 +8,14 @@
 	 * Glboal Configuration Module
 	 */
 	var core = angular.module('config', [
-		'DEBUG_ENV',
+		'ENVIRONMENT',
 		'APPLICATION_SETTINGS',
 		'angular-loading-bar',
 		'cgBusy'
 	]);
 
 	core.value('cgBusyDefaults', {
-		message:'Loading Stuff',
+		message: 'Loading Stuff',
 		backdrop: true,
 		templateUrl: '../common/core/loadingindicator/loadingindicator.template.html'
 	});
@@ -23,7 +23,7 @@
 	core.config(configure);
 
 	/* @ngInject */
-	function configure(DEBUG_ENV,
+	function configure(ENVIRONMENT,
 					   $logProvider,
 					   $stateProvider,
 					   $urlRouterProvider,
@@ -31,7 +31,7 @@
 					   cfpLoadingBarProvider,
 					   $httpProvider) {
 
-		if($logProvider.debugEnabled && DEBUG_ENV) {
+		if($logProvider.debugEnabled && ENVIRONMENT !== 'PRODUCTION') {
 			$logProvider.debugEnabled(true);
 		} else {
 			$logProvider.debugEnabled(false);

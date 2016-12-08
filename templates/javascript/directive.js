@@ -9,14 +9,14 @@
 	 */
 	angular
 		.module('<%= moduleName %>')
-	  	.directive('<%= cameledName %>', <%= classedName %>);
+	  	.directive('<%= cameledName %>', <%= classedName %>Directive);
 
 	/* @ngInject */
-	function <%= classedName %>() {
+	function <%= classedName %>Directive() {
 		var directive = {<% if (html) { %>
 			templateUrl: '<%= filePath %>/<%= name.toLowerCase() %>.template.html',<% } %>
 			link: link,
-			restrict: 'EA'
+			restrict: 'A'
 		};
 
 		return directive;

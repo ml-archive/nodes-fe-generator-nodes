@@ -8,6 +8,6 @@
 	 * Debug flag
 	 */
 	angular
-		.module('DEBUG_ENV', [])
-		.constant('DEBUG_ENV', true);
+		.module('ENVIRONMENT', [])
+		.constant('ENVIRONMENT', 'DEVELOPMENT');
 })();

@@ -1,26 +1,27 @@
 'use strict';
-var util 			= require('util');
-var path 			= require('path');
-var yeoman 			= require('yeoman-generator');
-var angularUtils 	= require('./util.js');
-var _string			= require('underscore.string');
-var chalk 			= require('chalk');
+var util = require('util');
+var path = require('path');
+var yeoman = require('yeoman-generator');
+var angularUtils = require('./util.js');
+var _string = require('underscore.string');
+var chalk = require('chalk');
 
 var Generator = module.exports = function Generator() {
 
-	yeoman.generators.NamedBase.apply(this, arguments);
+	yeoman.Base.apply(this, arguments);
 
 	this.sourceRoot(path.join(__dirname, 'templates'));
+	this.argument('name', {type: String, required: true});
 
-	this.cameledName	= _string.camelize(this.name);
-	this.classedName 	= _string.classify(this.name);
-	this.dashedName 	= _string.dasherize(this.name);
+	this.cameledName = _string.camelize(this.name);
+	this.classedName = _string.classify(this.name);
+	this.dashedName = _string.dasherize(this.name);
 	this.lowercasedName = this.name.toLowerCase();
 	this.pluralizedName = this.name + 's';
 
 };
 
-util.inherits(Generator, yeoman.generators.NamedBase);
+util.inherits(Generator, yeoman.Base);
 
 Generator.prototype.scriptTemplate = function(src, dest, data) {
 
@@ -46,7 +47,7 @@ Generator.prototype.scriptToIndex = function(file) {
 			]
 		});
 
-	} catch(e) {
+	} catch (e) {
 
 		this.log.error(chalk.yellow(
 			'\nUnable to find ' + filePath + '. Reference to ' + file + '.js ' + 'not added.\n'
@@ -70,7 +71,7 @@ Generator.prototype.dependencyToApp = function(dependency) {
 			]
 		});
 
-	} catch(e) {
+	} catch (e) {
 
 		this.log.error(chalk.yellow(
 			'\nUnable to find ' + filePath + '. Dependency ' + dependency + 'not added.\n'
@@ -85,7 +86,7 @@ Generator.prototype.importToScss = function(destinationPath, type) {
 	var needleIdentifier = type;
 	var splicable = '';
 
-	switch(type) {
+	switch (type) {
 		case 'directive':
 			needleIdentifier = 'Directives';
 			splicable = '../';
@@ -112,7 +113,7 @@ Generator.prototype.importToScss = function(destinationPath, type) {
 			]
 		});
 
-	} catch(e) {
+	} catch (e) {
 
 		this.log.error(chalk.yellow(
 			'\nUnable to find ' + filePath + '. Scss file not imported.\n'

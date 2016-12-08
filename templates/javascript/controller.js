@@ -9,10 +9,10 @@
 	 */
 	angular
 		.module('<%= moduleName %>')
-		.controller('<%= name %>Controller', <%= classedName %>);
+		.controller('<%= name %>Controller', <%= classedName %>Controller);
 
 	/* @ngInject */
-	function <%= classedName %>() {
+	function <%= classedName %>Controller() {
 		/*jshint validthis: true */
 		var vm = this;
 

@@ -11,7 +11,7 @@
 		/* @ngInject */
 		.config(function($stateProvider) {
 
-			var <%= name %> = {
+			var <%= name %>Route = {
 				name: 'application.<%= lowercaseName %>',
 				url: '/<%= lowercaseName %>',
 				views: {
@@ -23,6 +23,6 @@
 				}
 			};
 
-			$stateProvider.state(<%= name %>);
+			$stateProvider.state(<%= name %>Route);
 		});
 })();

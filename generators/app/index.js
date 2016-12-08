@@ -32,7 +32,8 @@ var bowerJsIgnore = [
 	'angulartics-cnzz',
 	'foundation.js',
 	'waypoints',
-	'sha1'
+	'sha1',
+	'what-input'
 ];
 
 var fs			= require('fs');
@@ -51,7 +52,7 @@ module.exports = yeoman.Base.extend({
 
 		// Core modules
 		this.requiredModules = [
-			"'DEBUG_ENV'",
+			"'ENVIRONMENT'",
 			"'API_ENDPOINTS'",
 			"'APPLICATION_SETTINGS'",
 			"'ui.router'",
@@ -153,7 +154,7 @@ module.exports = yeoman.Base.extend({
 					checked: true
 				}, {
 					value: 'foundation',
-					name: 'Foundation + angular-foundation (foundation.js will be replaced with angular-foundation.js)',
+					name: 'Foundation Sites + UI Bootstrap + n-uib-foundation-tpls',
 					checked: true
 				}, {
 					value: 'greensock',
@@ -187,7 +188,8 @@ module.exports = yeoman.Base.extend({
 					this.ngModules.push("'nCore'");
 				}
 				if (this.foundation) {
-					this.ngModules.push("'mm.foundation'");
+					this.ngModules.push("'ui.bootstrap'");
+					this.ngModules.push("'n.ui.foundation.tpls'");
 				}
 				if (this.lodash) {
 					this.ngModules.push("'ngLodash'");
@@ -465,7 +467,8 @@ module.exports = yeoman.Base.extend({
 			// Build the index.html file
 
 			var templateData = {
-				appname: this.appname
+				appname: this.appname,
+				foundation: this.foundation || false
 			};
 
 			// Template index.html
@@ -584,6 +587,18 @@ module.exports = yeoman.Base.extend({
 			'\nfront end dependencies by running ' +
 			chalk.yellow.bold('grunt wiredep') +
 			'.';
+		
+		var getFontAwesomeIcons =
+			'\nI see you chose to add ' +
+			chalk.yellow.bold('Foundation Sites, UI Bootstrap and n-uib-foundation-tpls') +
+			' to your project, awesome!' +
+			'\nRun ' +
+			chalk.green.bold('grunt copy:fa') +
+			'\nto copy over the font-awesome font files required by these modules.';
+				
+		if(this.foundation === true) {
+			this.log(getFontAwesomeIcons);
+		}
 
 		// If user used the --skip-install flag, tell them how to do it manually
 		if (this.options['skip-install']) {

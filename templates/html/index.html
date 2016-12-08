@@ -34,6 +34,10 @@
         <!-- build:js(.) scripts/vendor.js -->
         <!-- bower:js -->
         <!-- endbower -->
+        <% if (foundation) { %>
+        <script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+        <script src="bower_components/n-uib-foundation-tpls/n-uib-foundation.js"></script>
+        <% } %>
         <!-- endbuild -->
     </body>
 </html>

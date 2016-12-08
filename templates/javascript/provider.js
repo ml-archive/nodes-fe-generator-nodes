@@ -9,10 +9,10 @@
 	 */
 	angular
 		.module('<%= moduleName %>')
-		.provider('<%= name %>', <%= classedName %>);
+		.provider('<%= name %>', <%= classedName %>Provider);
 
 	/* @ngInject */
-	function <%= classedName %>() {
+	function <%= classedName %>Provider() {
 
 		// Private variables
 

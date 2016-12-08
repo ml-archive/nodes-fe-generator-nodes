@@ -32,8 +32,10 @@ var bowerIgnore = [
 	'angulartics-inspectlet',
 	'angulartics-newrelic-insights',
 	'foundation.js',
+	'what-input',
 	'waypoints',
-	'sha1'
+	'sha1',
+	'ui-bootstrap-tpls'
 ];
 // Since we are writing a new environment file, we remove it from the usemin processing
 var envFile = 'config/environment.js';
@@ -170,7 +172,11 @@ module.exports = function (grunt) {
 		sass: {
 			options: {
 				sourceMap: true,
-				imagePath: '<%%= yeoman.app %>/assets/images/'
+				imagePath: '<%%= yeoman.app %>/assets/images/',
+				includePaths: [
+					'bower_components/foundation-sites/scss',
+					'bower_components/n-uib-foundation-tpls/src'
+				]
 			},
 			server: {
 				options: {
@@ -239,14 +245,32 @@ module.exports = function (grunt) {
 		},
 		//
 		ngconstant: {
-			options: {
-				name: 'DEBUG_ENV',
-				dest: '.tmp/concat/scripts/environment.js',
-				constants: {
-					DEBUG_ENV: false
+			development: {
+				options: {
+					name: 'ENVIRONMENT',
+					dest: '.tmp/concat/scripts/environment.js',
+					constants: {
+						ENVIRONMENT: 'DEVELOPMENT'
+					}
 				}
 			},
-			dist: {
+			staging: {
+				options: {
+					name: 'ENVIRONMENT',
+					dest: '.tmp/concat/scripts/environment.js',
+					constants: {
+						ENVIRONMENT: 'STAGING'
+					}
+				}
+			},
+			production: {
+				options: {
+					name: 'ENVIRONMENT',
+					dest: '.tmp/concat/scripts/environment.js',
+					constants: {
+						ENVIRONMENT: 'PRODUCTION'
+					}
+				}
 			}
 		},
 
@@ -355,6 +379,16 @@ module.exports = function (grunt) {
 				cwd: '<%%= yeoman.app %>/styles',
 				dest: '.tmp/styles/',
 				src: '{,*/}*.css'
+			},
+			// Copies font-awesome fonts to the assets dir and places them in the correct folder
+			fa: {
+				files: [{
+					expand: true,
+					flatten: true,
+					cwd: '.',
+					src: 'bower_components/font-awesome/fonts/*.*',
+					dest: '<%%= yeoman.app %>/assets/fonts/font-awesome'
+				}]
 			}
 		},
 		// Renames files for browser caching purposes
@@ -464,11 +498,11 @@ module.exports = function (grunt) {
 		grunt.task.run(['bs-connectDist', 'watch']);
 	});
 
-	grunt.registerTask('build', [
+	grunt.registerTask('build-development', [
 		'clean:dist',
 		'wiredep',
 		'concurrent:dist',
-		'ngconstant',
+		'ngconstant:development',
 		'useminPrepare',
 		'ngtemplates',
 		'concat',
@@ -481,6 +515,48 @@ module.exports = function (grunt) {
 		'uglify',
 		'filerev',
 		'usemin'
+	]);
+	
+	grunt.registerTask('build-staging', [
+		'clean:dist',
+		'wiredep',
+		'concurrent:dist',
+		'ngconstant:staging',
+		'useminPrepare',
+		'ngtemplates',
+		'concat',
+		'postcss:dist',
+		'ngAnnotate',
+		//'uncss',
+		'copy:dist',
+		'cssmin',
+		'concat:dist',
+		'uglify',
+		'filerev',
+		'usemin'
+	]);
+	
+	grunt.registerTask('build-production', [
+		'clean:dist',
+		'wiredep',
+		'concurrent:dist',
+		'ngconstant:production',
+		'useminPrepare',
+		'ngtemplates',
+		'concat',
+		'postcss:dist',
+		'ngAnnotate',
+		//'uncss',
+		'copy:dist',
+		'cssmin',
+		'concat:dist',
+		'uglify',
+		'filerev',
+		'usemin'
+	]);
+	
+	grunt.registerTask('build', [
+		'build-development'
 	]);
 
 	grunt.registerTask('default', [

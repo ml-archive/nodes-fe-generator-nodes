@@ -15,7 +15,7 @@ The following components can be installed when running the generator:
 
 * nCore
 * nTranslate
-* Foundation + Angular-foundation
+* Foundation Sites + Angular UI Bootstrap + n-uib-foundation-tpls
 * Greensock Animation Platform
 * Lodash + ngLodash
 * ngAnimate

@@ -9,10 +9,10 @@
 	 */
 	angular
 		.module('<%= moduleName %>')
-		.factory('<%= name %>Factory', <%= classedName %>);
+		.factory('<%= name %>Factory', <%= classedName %>Factory);
 
 	/* @ngInject */
-	function <%= classedName %>() {
+	function <%= classedName %>Factory() {
 		/*jshint validthis: true */
 
 		// Variables

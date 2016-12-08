@@ -10,9 +10,11 @@
 	angular
 		.module('<%= name %>')
 		.config(function($provide) {
-			$provide.decorator('<%= classedName %>', function($delegate) {
-				// decorate the $delegate
-				return $delegate;
-			});
+			$provide.decorator('<%= classedName %>', <%= classedName %>Decorator);
 		});
+	
+	/* @ngInject */
+	function <%= classedName %>Decorator($delegate) {
+			
+	}
 })();
