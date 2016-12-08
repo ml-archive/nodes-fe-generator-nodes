@@ -22,8 +22,6 @@
 // Configuration:
 // Make sure the charset is set appropriately
 @charset "UTF-8";
-// The all powerful cross-browser resets
-@import "normalize";
 
 /*
  	Helpers, Utilities and Configuration
@@ -159,10 +157,8 @@
 /* ---> Do not delete this comment (components) <--- */
 
 /*
-	Application Specific Styles
+	Module Specific Styles
 */
-// Core
-@import "../common/core/loadingindicator/loadingindicator";
 
 // Directives
 /* ---> Do not delete this comment (Directives) <--- */

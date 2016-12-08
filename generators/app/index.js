@@ -594,7 +594,7 @@ module.exports = yeoman.Base.extend({
 			' to your project, awesome!' +
 			'\nRun ' +
 			chalk.green.bold('grunt copy:fa') +
-			'\nto copy over the font-awesome font files required by these modules.';
+			' to copy over the font-awesome font files required by these modules.';
 				
 		if(this.foundation === true) {
 			this.log(getFontAwesomeIcons);

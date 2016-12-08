@@ -10,15 +10,8 @@
 	var core = angular.module('config', [
 		'ENVIRONMENT',
 		'APPLICATION_SETTINGS',
-		'angular-loading-bar',
-		'cgBusy'
+		'angular-loading-bar'
 	]);
-
-	core.value('cgBusyDefaults', {
-		message: 'Loading Stuff',
-		backdrop: true,
-		templateUrl: '../common/core/loadingindicator/loadingindicator.template.html'
-	});
 
 	core.config(configure);
 
