@@ -426,18 +426,18 @@ module.exports = yeoman.Base.extend({
 
 		},
 
-		applicationCommon: function() {
-
-			// Copy the standard common modules
-
-			var dest = 'app/common';
-
-			this.fs.copy(
-				this.templatePath('common/app/common'),
-				this.destinationPath(dest)
-			);
-
-		},
+		// applicationCommon: function() {
+		//
+		// 	// Copy the standard common modules
+		//
+		// 	var dest = 'app/common';
+		//
+		// 	this.fs.copy(
+		// 		this.templatePath('common/app/common'),
+		// 		this.destinationPath(dest)
+		// 	);
+		//
+		// },
 
 		scss: function() {
 
