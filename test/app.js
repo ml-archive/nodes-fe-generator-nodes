@@ -49,8 +49,6 @@ describe('nodes:app', function() {
 	var appPath = 'customAppPath';
 	var appName = 'custom_App Name';
 
-	this.timeout(5000);
-
 	beforeEach(function() {
 
 		this.nodes = helpers

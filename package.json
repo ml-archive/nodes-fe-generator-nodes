@@ -34,20 +34,20 @@
     "underscore": "1.8.3",
     "underscore.string": "3.3.4",
     "wiredep": "4.0.0",
-    "yeoman-generator": "0.24.1"
+    "yeoman-generator": "0.22.2"
   },
   "devDependencies": {
-    "coveralls": "2.11.14",
+    "coveralls": "2.11.6",
     "grunt": "1.0.1",
-    "grunt-contrib-jshint": "1.0.0",
+    "grunt-contrib-jshint": "1.1.0",
     "istanbul": "0.4.5",
     "jshint": "2.9.4",
     "jshint-stylish": "2.2.1",
     "load-grunt-tasks": "3.5.2",
     "mocha": "3.1.2",
-    "semantic-release": "4.3.5",
-    "yeoman-assert": "2.2.1",
-    "yeoman-test": "1.5.1"
+    "semantic-release": "6.3.2",
+    "yeoman-assert": "2.1.1",
+    "yeoman-test": "1.0.0"
   },
   "engines": {
     "node": ">=4.0.0",
